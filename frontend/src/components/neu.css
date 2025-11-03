@@ -1,0 +1,120 @@
+/* neu.css - estilo neumorphic para NavBar */
+:root{
+  --bg: #eef2f6;
+  --surface: #f7f9fc;
+  --shadow-dark: rgba(16,24,40,0.08);
+  --shadow-light: rgba(255,255,255,0.9);
+  --accent: #2b6ef6;
+  --muted: #59626b;
+  --radius: 12px;
+}
+
+.neu-nav{
+  background: linear-gradient(180deg, var(--bg), #ffffff);
+  border-bottom: 1px solid rgba(16,24,40,0.04);
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.neu-container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+/* brand */
+.neu-brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  cursor:pointer;
+}
+.logo-blob{
+  width:48px;
+  height:48px;
+  border-radius:12px;
+  background: linear-gradient(145deg, #ffffff, var(--surface));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: var(--accent);
+  font-weight:700;
+  font-size:18px;
+  box-shadow: 6px 6px 14px var(--shadow-dark), -6px -6px 14px var(--shadow-light);
+}
+.brand-text .brand-title{
+  font-weight:700;
+  color:#111827;
+  font-size:16px;
+}
+.brand-text .brand-sub{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:2px;
+}
+
+/* links */
+.neu-links{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.neu-btn{
+  background: var(--surface);
+  border: none;
+  padding:10px 14px;
+  border-radius: 10px;
+  font-weight:600;
+  color:#111827;
+  box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+  cursor:pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.neu-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 10px 10px 20px rgba(16,24,40,0.12), -4px -4px 10px rgba(255,255,255,0.95);
+}
+
+/* actions */
+.neu-actions{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.neu-icon-btn{
+  width:44px;
+  height:44px;
+  border-radius:10px;
+  display:grid;
+  place-items:center;
+  background: var(--surface);
+  border:none;
+  box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+  cursor:pointer;
+}
+.neu-icon-btn svg { opacity:0.9; }
+
+.neu-logout{
+  background: linear-gradient(180deg, #fff, #f3f6fb);
+  border: 1px solid rgba(16,24,40,0.04);
+  padding:10px 14px;
+  border-radius:10px;
+  color:var(--muted);
+  cursor:pointer;
+  box-shadow: inset 2px 2px 4px rgba(255,255,255,0.6);
+  transition: transform .12s ease;
+}
+.neu-logout:hover{ transform: translateY(-2px); color:#111827 }
+
+/* responsive */
+@media (max-width:800px){
+  .neu-links{ display:none; }
+  .brand-text .brand-title{ font-size:15px }
+  .logo-blob{ width:42px; height:42px; font-size:15px }
+}

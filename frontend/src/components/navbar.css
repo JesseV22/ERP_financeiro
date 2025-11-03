@@ -1,0 +1,140 @@
+/* Estilo geral */
+:root {
+  --azul: #1e4dd8;
+  --azul-claro: #3a7bfa;
+  --cinza-claro: #f3f5f7;
+  --texto: #1f2937;
+  --radius: 12px;
+}
+
+.bank-navbar {
+  background: linear-gradient(90deg, var(--azul) 0%, var(--azul-claro) 100%);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.bank-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+/* Logo */
+.bank-logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.logo-icon {
+  background: white;
+  color: var(--azul);
+  border-radius: 10px;
+  padding: 8px;
+  font-size: 20px;
+  margin-right: 8px;
+}
+.logo-text h1 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+.logo-text span {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+/* Links desktop */
+.bank-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.bank-links button {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.bank-links button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+.bank-links .logout {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffe4e4;
+}
+.bank-links .logout:hover {
+  background: rgba(255, 100, 100, 0.3);
+}
+
+/* Botão mobile */
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  display: none;
+  cursor: pointer;
+}
+
+/* Menu responsivo (mobile) */
+@media (max-width: 768px) {
+  .bank-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    right: 16px;
+    background: #fff;
+    color: var(--texto);
+    padding: 16px;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 200px;
+    text-align: left;
+    animation: fadeIn 0.2s ease;
+  }
+
+  .bank-links.open {
+    display: flex;
+  }
+
+  .bank-links button {
+    background: none;
+    color: var(--texto);
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .bank-links button:hover {
+    background: var(--cinza-claro);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Animação suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
