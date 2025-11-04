@@ -1,5 +1,3 @@
-Aqui está a versão em Markdown para README, organizada, formatada e pronta para usar no GitHub ou outros repositórios:
-
 # 💰 Sistema Financeiro — DW3 (Cliente–Servidor)
 
 Trabalho da disciplina **Desenvolvimento Web III (DW3)** — IFSP Votuporanga  
